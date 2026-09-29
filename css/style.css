@@ -1,0 +1,309 @@
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: calc(100vh - 78px);
+    min-height: 760px;
+
+    padding: 65px 5%;
+
+    overflow: hidden;
+}
+
+
+/* ----------------------------------------
+   ETIQUETA SUPERIOR
+---------------------------------------- */
+
+.hero-label {
+    position: absolute;
+
+    top: 65px;
+    left: 5%;
+
+    margin: 0;
+
+    font-family: "acumin-pro", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    z-index: 20;
+}
+
+
+/* ========================================
+   BLOQUE DE TEXTO
+======================================== */
+
+.hero-content {
+    position: absolute;
+
+    left: 5%;
+    top: 145px;
+
+    width: 45%;
+
+    z-index: 20;
+}
+
+
+/* LOGOTIPO GRANDE */
+
+.hero-title {
+    display: block;
+
+    width: 440px;
+    max-width: 90%;
+
+    height: auto;
+
+    margin: 0 0 35px 0;
+}
+
+
+/* Lo que sientes / también informa */
+
+.hero-statement {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--verde);
+
+    font-family: "acumin-pro", sans-serif;
+    font-size: 38px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    margin-bottom: 28px;
+}
+
+.hero-statement span {
+    display: block;
+}
+
+.hero-statement em {
+    display: block;
+
+    margin-left: 180px;
+    margin-top: 8px;
+
+    font-weight: 300;
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero-description {
+    margin: 0;
+
+    max-width: 510px;
+
+    font-family: "acumin-pro", sans-serif;
+
+    font-size: 18px;
+    font-weight: 300;
+
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   COMPOSICIÓN VISUAL DERECHA
+======================================== */
+
+.hero-visual {
+    position: absolute;
+
+    /*
+    Esto es lo que hace que el gráfico se traslape
+    con el contenido en lugar de ser otra columna.
+    */
+
+    width: 720px;
+    height: 620px;
+
+    right: -15px;
+    top: 60px;
+
+    z-index: 5;
+}
+
+
+/* ========================================
+   MANCHAS DE COLOR
+======================================== */
+
+.mancha {
+    position: absolute;
+
+    display: block;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* MORADO ARRIBA */
+
+.mancha-morada {
+    width: 520px;
+
+    top: -60px;
+    left: 80px;
+
+    z-index: 1;
+}
+
+
+/* NARANJA ABAJO / IZQUIERDA */
+
+.mancha-naranja {
+    width: 440px;
+
+    left: -15px;
+    top: 320px;
+
+    z-index: 2;
+}
+
+
+/* AMARILLO DERECHA */
+
+.mancha-amarilla {
+    width: 500px;
+
+    right: -70px;
+    top: 245px;
+
+    z-index: 3;
+}
+
+
+/* ========================================
+   ÓRBITAS
+======================================== */
+
+.orbita {
+    position: absolute;
+
+    border:
+
+        1px solid
+        rgba(52, 74, 54, 0.65);
+
+    border-radius: 50%;
+
+    z-index: 10;
+}
+
+
+/* EXTERIOR */
+
+.orbita-exterior {
+    width: 600px;
+    height: 400px;
+
+    left: 55px;
+    top: 180px;
+}
+
+
+/* MEDIA */
+
+.orbita-media {
+    width: 475px;
+    height: 310px;
+
+    left: 120px;
+    top: 225px;
+}
+
+
+/* INTERIOR PUNTEADA */
+
+.orbita-interior {
+    width: 330px;
+    height: 200px;
+
+    left: 195px;
+    top: 280px;
+
+    border-style: dashed;
+
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   NÚCLEO
+======================================== */
+
+.nucleo {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    left: 310px;
+    top: 330px;
+
+    border:
+
+        1px solid
+        var(--verde);
+
+    border-radius: 50%;
+
+    z-index: 12;
+}
+
+
+/* ========================================
+   PUNTO NARANJA
+======================================== */
+
+.punto-naranja {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    right: 120px;
+    top: 280px;
+
+    border-radius: 50%;
+
+    background-color: #e76d40;
+
+    z-index: 15;
+}
+
+
+/* ========================================
+   SCROLL
+======================================== */
+
+.scroll {
+    position: absolute;
+
+    left: 5%;
+    bottom: 45px;
+
+    margin: 0;
+
+    font-family: "acumin-pro", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.8px;
+
+    z-index: 20;
+}
