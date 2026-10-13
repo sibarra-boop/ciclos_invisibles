@@ -1,309 +1,995 @@
 /* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+
+    --verde: #344a36;
+    --crema: #f8f7f2;
+
+    --font-main: "acumin-pro", sans-serif;
+
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background: var(--crema);
+    color: var(--verde);
+
+    font-family: var(--font-main);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+
+    width: calc(100% - 120px);
+    height: 86px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(52, 74, 54, 0.25);
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.logo img {
+
+    display: block;
+
+    width: 58px;
+    height: auto;
+
+}
+
+
+/* NAVEGACIÓN */
+
+.nav {
+
+    display: flex;
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+.nav a {
+
+    position: relative;
+
+    color: var(--verde);
+
+    font-family: var(--font-main);
+
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 1.4px;
+
+    text-decoration: none;
+
+}
+
+
+/* línea al pasar mouse */
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--verde);
+
+    transition: width 0.3s ease;
+
+}
+
+.nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* ========================================
    HERO
 ======================================== */
 
 .hero {
+
     position: relative;
 
     width: 100%;
-    height: calc(100vh - 78px);
-    min-height: 760px;
 
-    padding: 65px 5%;
+    height: calc(100vh - 86px);
+
+    min-height: 820px;
 
     overflow: hidden;
+
 }
 
 
-/* ----------------------------------------
-   ETIQUETA SUPERIOR
----------------------------------------- */
+/* ========================================
+   NÚMERO / ETIQUETA
+======================================== */
 
-.hero-label {
+.hero-number {
+
     position: absolute;
 
-    top: 65px;
+    top: 72px;
     left: 5%;
 
     margin: 0;
 
-    font-family: "acumin-pro", sans-serif;
     font-size: 13px;
     font-weight: 400;
 
     letter-spacing: 1.5px;
 
-    z-index: 20;
 }
 
 
 /* ========================================
-   BLOQUE DE TEXTO
+   BLOQUE IZQUIERDO
 ======================================== */
 
-.hero-content {
+.hero-copy {
+
     position: absolute;
 
     left: 5%;
-    top: 145px;
+    top: 155px;
 
-    width: 45%;
+    width: 47%;
 
-    z-index: 20;
+    z-index: 10;
+
 }
 
 
 /* LOGOTIPO GRANDE */
 
-.hero-title {
+.titulo {
+
     display: block;
 
     width: 440px;
-    max-width: 90%;
+    max-width: 88%;
 
     height: auto;
 
-    margin: 0 0 35px 0;
+    margin-bottom: 45px;
+
 }
 
 
-/* Lo que sientes / también informa */
+/* ========================================
+   FRASE
+======================================== */
 
-.hero-statement {
+.frase {
+
     display: flex;
     flex-direction: column;
 
-    color: var(--verde);
+    width: 500px;
+    max-width: 100%;
 
-    font-family: "acumin-pro", sans-serif;
-    font-size: 38px;
-    font-weight: 300;
-
-    line-height: 1;
-
-    margin-bottom: 28px;
-}
-
-.hero-statement span {
-    display: block;
-}
-
-.hero-statement em {
-    display: block;
-
-    margin-left: 180px;
-    margin-top: 8px;
+    font-size: 39px;
+    line-height: 1.05;
 
     font-weight: 300;
+
+    margin-bottom: 30px;
+
 }
 
 
-/* DESCRIPCIÓN */
+.frase span {
 
-.hero-description {
+    display: block;
+
+}
+
+
+.frase em {
+
+    display: block;
+
+    margin-left: 200px;
+    margin-top: 7px;
+
+    font-weight: 300;
+
+}
+
+
+/* ========================================
+   DESCRIPCIÓN
+======================================== */
+
+.descripcion {
+
     margin: 0;
-
-    max-width: 510px;
-
-    font-family: "acumin-pro", sans-serif;
 
     font-size: 18px;
     font-weight: 300;
 
     line-height: 1.75;
+
 }
 
 
 /* ========================================
-   COMPOSICIÓN VISUAL DERECHA
+   DIAGRAMA
 ======================================== */
 
-.hero-visual {
+.hero-diagrama {
+
     position: absolute;
-
-    /*
-    Esto es lo que hace que el gráfico se traslape
-    con el contenido en lugar de ser otra columna.
-    */
-
-    width: 720px;
-    height: 620px;
 
     right: -15px;
-    top: 60px;
+    top: 55px;
 
-    z-index: 5;
+    width: 54%;
+
+    height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
 }
 
 
-/* ========================================
-   MANCHAS DE COLOR
-======================================== */
-
-.mancha {
-    position: absolute;
+.hero-diagrama img {
 
     display: block;
 
+    width: 100%;
+    max-width: 720px;
+
+    height: auto;
+
     object-fit: contain;
 
-    pointer-events: none;
-}
-
-
-/* MORADO ARRIBA */
-
-.mancha-morada {
-    width: 520px;
-
-    top: -60px;
-    left: 80px;
-
-    z-index: 1;
-}
-
-
-/* NARANJA ABAJO / IZQUIERDA */
-
-.mancha-naranja {
-    width: 440px;
-
-    left: -15px;
-    top: 320px;
-
-    z-index: 2;
-}
-
-
-/* AMARILLO DERECHA */
-
-.mancha-amarilla {
-    width: 500px;
-
-    right: -70px;
-    top: 245px;
-
-    z-index: 3;
 }
 
 
 /* ========================================
-   ÓRBITAS
-======================================== */
-
-.orbita {
-    position: absolute;
-
-    border:
-
-        1px solid
-        rgba(52, 74, 54, 0.65);
-
-    border-radius: 50%;
-
-    z-index: 10;
-}
-
-
-/* EXTERIOR */
-
-.orbita-exterior {
-    width: 600px;
-    height: 400px;
-
-    left: 55px;
-    top: 180px;
-}
-
-
-/* MEDIA */
-
-.orbita-media {
-    width: 475px;
-    height: 310px;
-
-    left: 120px;
-    top: 225px;
-}
-
-
-/* INTERIOR PUNTEADA */
-
-.orbita-interior {
-    width: 330px;
-    height: 200px;
-
-    left: 195px;
-    top: 280px;
-
-    border-style: dashed;
-
-    opacity: 0.65;
-}
-
-
-/* ========================================
-   NÚCLEO
-======================================== */
-
-.nucleo {
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    left: 310px;
-    top: 330px;
-
-    border:
-
-        1px solid
-        var(--verde);
-
-    border-radius: 50%;
-
-    z-index: 12;
-}
-
-
-/* ========================================
-   PUNTO NARANJA
-======================================== */
-
-.punto-naranja {
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    right: 120px;
-    top: 280px;
-
-    border-radius: 50%;
-
-    background-color: #e76d40;
-
-    z-index: 15;
-}
-
-
-/* ========================================
-   SCROLL
+   INDICADOR INFERIOR
 ======================================== */
 
 .scroll {
+
     position: absolute;
 
     left: 5%;
-    bottom: 45px;
+    bottom: 42px;
 
-    margin: 0;
-
-    font-family: "acumin-pro", sans-serif;
+    color: var(--verde);
 
     font-size: 12px;
+    font-weight: 400;
 
     letter-spacing: 1.8px;
 
+    text-decoration: none;
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .header {
+
+        width: calc(100% - 70px);
+
+    }
+
+    .nav {
+
+        gap: 28px;
+
+    }
+
+
+    .hero-number {
+
+        left: 5%;
+
+    }
+
+
+    .hero-copy {
+
+        width: 48%;
+
+    }
+
+
+    .titulo {
+
+        width: 380px;
+
+    }
+
+
+    .frase {
+
+        font-size: 32px;
+
+    }
+
+    .frase em {
+
+        margin-left: 120px;
+
+    }
+
+
+    .descripcion {
+
+        font-size: 16px;
+
+    }
+
+
+    .hero-diagrama {
+
+        width: 56%;
+
+        right: -45px;
+
+        top: 90px;
+
+    }
+
+}
+
+
+/* ========================================
+   TABLET VERTICAL
+======================================== */
+
+@media (max-width: 850px) {
+
+    .header {
+
+        width: calc(100% - 50px);
+
+    }
+
+
+    .logo img {
+
+        width: 48px;
+
+    }
+
+
+    .nav {
+
+        gap: 18px;
+
+    }
+
+    .nav a {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero {
+
+        min-height: 900px;
+
+    }
+
+
+    .hero-copy {
+
+        left: 6%;
+        top: 140px;
+
+        width: 55%;
+
+    }
+
+
+    .titulo {
+
+        width: 330px;
+
+    }
+
+
+    .frase {
+
+        font-size: 29px;
+
+    }
+
+    .frase em {
+
+        margin-left: 90px;
+
+    }
+
+
+    .hero-diagrama {
+
+        width: 57%;
+
+        right: -80px;
+        top: 160px;
+
+    }
+
+
+    .descripcion {
+
+        max-width: 360px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 650px) {
+
+    .header {
+
+        width: calc(100% - 40px);
+
+        height: 72px;
+
+    }
+
+
+    .nav {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        height: auto;
+
+        min-height: 100vh;
+
+        padding:
+
+            70px
+            25px
+            100px;
+
+    }
+
+
+    .hero-number {
+
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .hero-copy {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+
+    }
+
+
+    .titulo {
+
+        width: 310px;
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .frase {
+
+        width: 100%;
+
+        font-size: 30px;
+
+    }
+
+
+    .frase em {
+
+        margin-left: 70px;
+
+    }
+
+
+    .descripcion {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .hero-diagrama {
+
+        position: relative;
+
+        width: 125%;
+        height: auto;
+
+        right: auto;
+        top: auto;
+
+        margin:
+
+            30px
+            0
+            30px
+            -12%;
+
+    }
+
+
+    .hero-diagrama img {
+
+        width: 100%;
+
+    }
+
+
+    .scroll {
+
+        position: relative;
+
+        display: block;
+
+        left: auto;
+        bottom: auto;
+
+        margin-top: 30px;
+
+    }
+
+}
+
+/* ========================================
+   SECCIÓN 02 · SENSACIONES
+======================================== */
+
+.sensaciones {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding:
+        85px
+        5%
+        70px;
+
+    background-color: #344a36;
+    color: #f8f7f2;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.sensaciones-header {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.section-number {
+
+    margin: 0 0 40px 0;
+
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(248, 247, 242, 0.9);
+
+}
+
+
+.sensaciones h2 {
+
+    margin: 0;
+
+    font-family: var(--font-main);
+
+    font-size: clamp(55px, 6vw, 88px);
+
+    line-height: 0.95;
+
+    font-weight: 300;
+
+    letter-spacing: -2px;
+
+    color: #f8f7f2;
+
+}
+
+
+.section-intro {
+
+    margin:
+        25px
+        0
+        0;
+
+    font-family: var(--font-main);
+
+    font-size: 17px;
+    font-weight: 300;
+
+    line-height: 1.5;
+
+    color: rgba(248, 247, 242, 0.72);
+
+}
+
+
+/* ========================================
+   DIAGRAMA
+======================================== */
+
+.sensaciones-diagrama {
+
+    position: relative;
+
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+
+}
+
+
+.sensaciones-diagrama img {
+
+    display: block;
+
+    width: 100%;
+    max-width: 1320px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+/* ========================================
+   PIE DE LA SECCIÓN
+======================================== */
+
+.sensaciones-footer {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 5px;
+
+    font-family: var(--font-main);
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 1.7px;
+
+    color: rgba(248, 247, 242, 0.7);
+
+}
+
+
+/* =========================================
+   HOTSPOT HAMBRE
+   Se coloca SOBRE el Hambre del PNG
+========================================= */
+
+.sensaciones-diagrama {
+    position: relative;
+    width: 100%;
+}
+
+.diagrama-sensaciones {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* BOTÓN INVISIBLE */
+/* =========================================
+   MAPA INTERACTIVO DE SENSACIONES
+========================================= */
+
+.sensaciones-diagrama {
+    position: relative;
+
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+
+/* Este contenedor toma EXACTAMENTE
+   el tamaño de la imagen */
+
+.mapa-sensaciones {
+    position: relative;
+
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+}
+
+
+/* PNG ORIGINAL */
+
+.diagrama-sensaciones {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   HOTSPOT HAMBRE
+========================================= */
+
+.hotspot-hambre {
+
+    position: absolute;
+
+    /*
+       posición respecto AL PNG,
+       no respecto a toda la sección
+    */
+
+    left: 68.5%;
+    top: 27%;
+
+    transform: translate(-50%, -50%);
+
+    width: 9.5%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border: 0;
+
+    padding: 0;
+
+    cursor: pointer;
+
     z-index: 20;
+
+    transition:
+        background-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* =========================================
+   SELECCIONADO
+========================================= */
+
+.hotspot-hambre.activo {
+
+    background: #eeee72;
+
+    box-shadow:
+        0 0 0 2px #f8f7f2;
+}
+
+
+/* volvemos a escribir HAMBRE
+   porque el amarillo tapa el texto del PNG */
+
+.hotspot-hambre.activo::after {
+
+    content: "Hambre";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #304a35;
+
+    font-family: "acumin-pro", sans-serif;
+
+    font-size: clamp(12px, 1.15vw, 18px);
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+@media (hover: hover) {
+
+    .hotspot-hambre:hover:not(.activo) {
+
+        background: rgba(238, 238, 114, .15);
+
+        box-shadow:
+            0 0 0 1px rgba(248, 247, 242, .55);
+    }
+
+}
+
+/* =========================================
+   CONTENIDO HAMBRE
+========================================= */
+
+.contenido-hambre {
+
+    display: none;
+
+    width: 100%;
+
+    background: #f8f7f2;
+}
+
+
+/* aparece cuando hacemos clic */
+
+.contenido-hambre.visible {
+
+    display: block;
+}
+
+
+/* SECCIONES */
+
+.hambre-seccion {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    background: #f8f7f2;
+}
+
+
+/* GRÁFICAS */
+
+.grafica-hambre {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* primera gráfica */
+
+.grafica-hambre-1 {
+
+    max-width: 1440px;
+}
+
+
+/* segunda gráfica */
+
+.grafica-hambre-2 {
+
+    max-width: 1440px;
 }

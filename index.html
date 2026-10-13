@@ -1,71 +1,313 @@
-<section class="hero">
+<!DOCTYPE html>
+<html lang="es">
 
-    <p class="hero-label">
-        01 — TU CUERPO PRODUCE INFORMACIÓN
-    </p>
+<head>
 
-    <!-- BLOQUE IZQUIERDO -->
-    <div class="hero-content">
+    <meta charset="UTF-8">
 
-        <img
-            src="img/titulo.png"
-            alt="Ciclos Invisibles"
-            class="hero-title"
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ciclos Invisibles</title>
+
+
+    <!-- =========================
+         ADOBE FONTS
+    ========================== -->
+
+    <!-- Cambia XXXXXXX por tu código real de Adobe Fonts -->
+
+    <link
+        rel="stylesheet"
+        href="https://use.typekit.net/XXXXXXX.css"
+    >
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+
+            <img
+                src="img/logo.png"
+                alt="Ciclos Invisibles"
+            >
+
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="#explorar">
+                EXPLORAR
+            </a>
+
+            <a href="#ciclo">
+                EL CICLO
+            </a>
+
+            <a href="#red">
+                LA RED
+            </a>
+
+            <a href="#fuentes">
+                FUENTES
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ========================================
+         MAIN
+    ========================================= -->
+
+    <main>
+
+
+
+        <!-- ====================================
+             01 · HERO
+        ===================================== -->
+
+        <section class="hero">
+
+
+            <p class="hero-number">
+
+                01 — TU CUERPO PRODUCE INFORMACIÓN
+
+            </p>
+
+
+
+            <!-- TEXTO -->
+
+            <div class="hero-copy">
+
+
+                <img
+                    src="img/titulo.png"
+                    alt="Ciclos Invisibles"
+                    class="titulo"
+                >
+
+
+                <div class="frase">
+
+                    <span>
+                        Lo que sientes
+                    </span>
+
+                    <em>
+                        también importa
+                    </em>
+
+                </div>
+
+
+                <p class="descripcion">
+
+                    Hay cambios que ocurren antes de que puedas verlos.<br>
+
+                    Sigue una sensación y descubre algunas relaciones<br>
+
+                    que pueden existir detrás de ella.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- DIAGRAMA -->
+
+            <div class="hero-diagrama">
+
+                <img
+                    src="img/diagrama.png"
+                    alt="Diagrama Ciclos Invisibles"
+                >
+
+            </div>
+
+
+
+            <!-- SCROLL -->
+
+            <a
+                href="#explorar"
+                class="scroll"
+            >
+
+                DESLIZA PARA ENTRAR EN LA RED ↓
+
+            </a>
+
+
+        </section>
+
+
+
+
+        <!-- ====================================
+             02 · ¿QUÉ ESTÁS SINTIENDO?
+        ===================================== -->
+
+        <section
+            class="sensaciones"
+            id="explorar"
         >
 
-        <div class="hero-statement">
-            <span>Lo que sientes</span>
-            <em>también informa</em>
-        </div>
 
-        <p class="hero-description">
-            Hay cambios que ocurren antes de que puedas verlos.<br>
-            Sigue una sensación y descubre algunas relaciones<br>
-            que pueden existir detrás de ella.
-        </p>
+            <!-- CABECERA -->
 
-    </div>
+            <div class="sensaciones-header">
 
 
-    <!-- COMPOSICIÓN DERECHA -->
-    <div class="hero-visual">
+                <p class="section-number">
 
-        <!-- MANCHAS -->
+                    02 — EMPIEZA POR ALGO QUE RECONOCES
+
+                </p>
+
+
+                <h2>
+
+                    ¿Qué estás sintiendo?
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    No necesitas saber el nombre de una hormona
+                    para empezar a observar tu cuerpo.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="sensaciones-diagrama">
+
+    <img
+        src="img/diagrama2.png"
+        alt="Mapa de sensaciones del ciclo menstrual"
+        class="diagrama-sensaciones"
+    >
+
+    <!--
+        Zona invisible encima del círculo
+        de Hambre que YA EXISTE en la imagen
+    -->
+    <button
+        id="hambreBtn"
+        class="hotspot-hambre"
+        type="button"
+        aria-label="Explorar hambre"
+        aria-expanded="false"
+    ></button>
+
+</div>
+
+
+<script>
+
+const hambreBtn = document.getElementById("hambreBtn");
+const contenidoHambre = document.getElementById("contenidoHambre");
+
+if (hambreBtn && contenidoHambre) {
+
+    hambreBtn.addEventListener("click", function () {
+
+        const estaAbierto =
+            contenidoHambre.classList.toggle("visible");
+
+        hambreBtn.classList.toggle(
+            "activo",
+            estaAbierto
+        );
+
+        hambreBtn.setAttribute(
+            "aria-expanded",
+            estaAbierto
+        );
+
+        if (estaAbierto) {
+
+            setTimeout(function () {
+
+                contenidoHambre.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 250);
+
+        }
+
+    });
+
+}
+
+</script>
+<!-- ========================================
+     CONTENIDO DE HAMBRE
+========================================= -->
+
+<div id="contenidoHambre" class="contenido-hambre">
+
+
+    <!-- 03 · DE LA SENSACIÓN A LO INVISIBLE -->
+
+    <section class="hambre-seccion hambre-invisible">
+
         <img
-            src="img/circulo_morado.png"
-            class="mancha mancha-morada"
-            alt=""
+            src="img/diagrama_hambre.png"
+            alt="Relaciones internas asociadas al hambre"
+            class="grafica-hambre grafica-hambre-1"
         >
 
-        <img
-            src="img/circulo_naranja.png"
-            class="mancha mancha-naranja"
-            alt=""
-        >
+    </section>
+
+
+    <!-- 04 · CUIDADOS QUE TE ACOMPAÑAN -->
+
+    <section class="hambre-seccion hambre-cuidados">
 
         <img
-            src="img/circulo_amarillo.png"
-            class="mancha mancha-amarilla"
-            alt=""
+            src="img/diagrama_hambre2.png"
+            alt="Formas de acompañar el hambre"
+            class="grafica-hambre grafica-hambre-2"
         >
 
-
-        <!-- ÓRBITAS -->
-        <div class="orbita orbita-exterior"></div>
-        <div class="orbita orbita-media"></div>
-        <div class="orbita orbita-interior"></div>
-
-        <!-- CENTRO -->
-        <div class="nucleo"></div>
-
-        <!-- PUNTO -->
-        <div class="punto-naranja"></div>
-
-    </div>
+    </section>
 
 
-    <p class="scroll">
-        DESLIZA PARA ENTRAR EN LA RED ↓
-    </p>
-
-</section>
+</div>
